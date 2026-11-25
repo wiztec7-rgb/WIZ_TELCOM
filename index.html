@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wiztec Wi-Fi Manager</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="brand-icon">W</span><div><strong>Wiztec Wi-Fi</strong><small>Hotspot Passes</small></div></div>
+  <span class="demo-tag">DEMO MODE</span>
+</header>
+<main>
+  <section class="hero">
+    <div class="eyebrow">FAST • SIMPLE • CONNECTED</div>
+    <h1>Your internet.<br><span>Your way.</span></h1>
+    <p>Choose a pass, enter your details and try the sample checkout.</p>
+    <div class="status"><span></span> Wi-Fi packages available</div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading"><div><p class="eyebrow">CHOOSE YOUR PASS</p><h2>Simple packages</h2></div></div>
+    <div id="packages" class="packages"><div class="loading">Loading packages…</div></div>
+  </section>
+
+  <section class="checkout section">
+    <p class="eyebrow">CHECKOUT</p><h2>Get your Wi-Fi pass</h2>
+    <form id="order-form">
+      <label for="name">Your name</label>
+      <input id="name" name="name" placeholder="e.g. Mariama Kamara" maxlength="80" required>
+      <label for="phone">Mobile number</label>
+      <input id="phone" name="phone" placeholder="e.g. +232 76 123456" maxlength="25" required>
+      <label for="method">Payment method</label>
+      <select id="method" name="method">
+        <option value="orange_money">Orange Money (integration not connected)</option>
+        <option value="afrimoney">Afrimoney (integration not connected)</option>
+        <option value="demo">Demo checkout only</option>
+      </select>
+      <div class="selected-summary"><span>Selected package</span><strong id="selected-name">1 Hour Pass</strong><strong id="selected-price">NLe 5</strong></div>
+      <button class="primary" type="submit" id="submit-btn">Create order</button>
+      <p class="fine-print">Demo only. Do not enter a wallet PIN or secret code. No real payment is taken.</p>
+    </form>
+    <div id="result" class="result" hidden aria-live="polite"></div>
+  </section>
+
+  <section class="section admin-section">
+    <div class="admin-heading"><div><p class="eyebrow">BUSINESS OWNER</p><h2>Order dashboard</h2></div><button class="secondary" id="refresh-orders">Refresh</button></div>
+    <div class="table-wrap"><table><thead><tr><th>Order</th><th>Customer</th><th>Package</th><th>Amount</th><th>Status</th></tr></thead><tbody id="orders"><tr><td colspan="5">No orders loaded yet.</td></tr></tbody></table></div>
+    <p class="fine-print">Local demo dashboard, not protected by a login. Do not publish this version as-is.</p>
+  </section>
+</main>
+<footer>© <span id="year"></span> Wiztec Wi-Fi Manager · Learning prototype</footer>
+<script src="/static/app.js"></script>
+</body>
+</html>
